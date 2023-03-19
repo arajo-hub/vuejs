@@ -7,9 +7,12 @@
 </head>
 <body>
     <div id="app">
-        <p>{{ message }}</p>
-        <p>{{ message + "!!!" }}</p>
-        <p>{{ message.split('').reverse().join('') }}</p>
+        {{ var a = 10; }}
+        {{ if (true) {return 100} }}
+        {{ true ? 100 : 0 }}
+
+        {{ message.split('').reverse().join('') }}
+        {{ reversedMessage }}
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
@@ -19,6 +22,11 @@
             el: '#app',
             data: {
                 message: 'Hello Vue.js!'
+            },
+            computed: {
+                reversedMessage: function() {
+                    return this.message.split('').reverse().join('');
+                }
             }
         });
     </script>
